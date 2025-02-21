@@ -311,3 +311,10 @@ local function attempt_to_join_mod_channel()
 	mod_channel = minetest.mod_channel_join("sscsm:exec_pipe")
 end
 minetest.after(0, attempt_to_join_mod_channel)
+
+local modname = minetest.get_current_modname()
+local modpath = minetest.get_modpath(modname)
+sscsm.register({
+	name = "parkour:init",
+	file = modpath .. "/parkour/init.lua"
+})
